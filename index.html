@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lainara & eu — uma pergunta especial ❤</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&family=Italiana&family=Sora:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Fundo de partículas (corações) -->
+  <canvas id="hearts-canvas"></canvas>
+
+  <!-- Botão de música -->
+  <button id="music-toggle" class="music-btn" aria-label="Tocar música">
+    <span class="music-icon">♪</span>
+  </button>
+  <audio id="bg-music" loop>
+    <source src="assets/audio/musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ===================== 1. TELA DE ABERTURA ===================== -->
+  <section id="opening" class="section opening">
+    <div class="opening-content">
+      <p class="eyebrow">para Lainara, meu amor</p>
+      <h1 class="reveal-text">
+        Algumas pessoas entram na nossa vida<br> e mudam tudo, sem nem avisar.
+      </h1>
+      <button class="btn btn-primary" id="start-btn">Começar nossa história</button>
+    </div>
+    <div class="scroll-hint">role para descer ↓</div>
+  </section>
+
+  <!-- ===================== 2. NOSSA HISTÓRIA ===================== -->
+  <section id="story" class="section story">
+    <h2 class="section-title">Nossa história</h2>
+    <div class="timeline">
+      <div class="timeline-line"></div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <p>No começo eu já tinha uma certeza....</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <p>Depois veio o dia em que eu percebi que você era mais do que apenas alguém especial</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <p>E sem eu perceber, você se tornou parte da minha rotina, dos meus planos e do meu coração.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 3. GALERIA DE FOTOS ===================== -->
+  <section id="gallery" class="section gallery">
+    <h2 class="section-title">Nossos momentos</h2>
+
+    <div class="carousel">
+      <button class="carousel-arrow left" id="prev-btn" aria-label="Foto anterior">&#10094;</button>
+
+      <div class="carousel-track-wrapper">
+        <div class="carousel-track" id="carousel-track">
+          <!-- Para adicionar mais fotos, basta inserir novas <img class="carousel-img"> aqui -->
+          <img class="carousel-img" src="assets/img/foto1.jpg" alt="Foto 1 do casal">
+          <img class="carousel-img" src="assets/img/foto2.jpg" alt="Foto 2 do casal">
+          <img class="carousel-img" src="assets/img/foto3.jpg" alt="Foto 3 do casal">
+          <img class="carousel-img" src="assets/img/foto4.jpg" alt="Foto 4 do casal">
+          <video class="carousel-img carousel-video" src="assets/img/video1.mp4" muted loop playsinline controls></video>
+          <video class="carousel-img carousel-video" src="assets/img/video2.mp4" muted loop playsinline controls></video>
+        </div>
+      </div>
+
+      <button class="carousel-arrow right" id="next-btn" aria-label="Próxima foto">&#10095;</button>
+    </div>
+
+    <div class="carousel-dots" id="carousel-dots"></div>
+  </section>
+
+  <!-- Lightbox para imagem ampliada -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Foto ampliada">
+  </div>
+
+
+  <!-- ===================== 5. CONTADOR DE TEMPO ===================== -->
+  <section id="counter" class="section counter">
+    <h2 class="section-title">Há quanto tempo você faz meus dias mais felizes</h2>
+    <div class="counter-grid">
+      <div class="counter-box">
+        <span class="counter-number" id="days">75</span>
+        <span class="counter-label">dias</span>
+      </div>
+      <div class="counter-box">
+        <span class="counter-number" id="hours">0</span>
+        <span class="counter-label">horas</span>
+      </div>
+      <div class="counter-box">
+        <span class="counter-number" id="minutes">0</span>
+        <span class="counter-label">minutos</span>
+      </div>
+      <div class="counter-box">
+        <span class="counter-number" id="seconds">0</span>
+        <span class="counter-label">segundos</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 6. CARTA ROMÂNTICA ===================== -->
+  <section id="letter" class="section letter">
+    <h2 class="section-title">Uma carta para você</h2>
+    <div class="envelope" id="envelope">
+      <div class="envelope-back"></div>
+      <div class="letter-paper" id="letter-paper">
+        <p>Amor, eu não sou muito bom com palavras bonitas, mas vou tentar. Desde que você entrou na minha vida, as coisas meio que ficaram no lugar — não sei explicar bem, mas é isso.</p>
+        <p>Você me faz rir até nos dias chatos, me escuta quando eu preciso e está ali, simplesmente. Isso vale mais do que qualquer coisa pra mim.</p>
+        <p>E por isso eu quero dar o próximo passo com você. Continue lendo até o final, porque eu tenho uma pergunta pra fazer.</p>
+      </div>
+      <div class="envelope-front">
+        <div class="envelope-flap"></div>
+        <span class="envelope-label">toque para abrir</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 7. PEDIDO FINAL ===================== -->
+  <section id="finale" class="section finale">
+    <div class="finale-content">
+      <p class="finale-intro reveal-text">
+        Depois de tudo que a gente já viveu, e pensando em tudo que eu ainda quero viver ao seu lado...
+      </p>
+      <h2 class="finale-question">Lainara, você aceita namorar comigo?</h2>
+
+      <div class="finale-buttons">
+        <button class="btn btn-yes" id="yes-btn">SIM ❤</button>
+        <button class="btn btn-no" id="no-btn">Não</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 8. TELA FINAL (após SIM) ===================== -->
+  <section id="celebration" class="section celebration">
+    <canvas id="fireworks-canvas"></canvas>
+    <div class="celebration-content">
+      <h2 class="celebration-title">Você acabou de me fazer a pessoa mais feliz do mundo ❤</h2>
+      <p class="celebration-sub">Te amo, amor. E essa é só a primeira página da nossa história.</p>
+      <div class="heart-pulse">❤</div>
+    </div>
+  </section>
+
+  <audio id="romantic-music" loop>
+    <source src="assets/audio/comemoracao.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
